@@ -7,21 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7AEFC592AD9F65E6F8946A93 /* Pods_GlobalCrewServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18B61E61F3F563A861BFBDB3 /* Pods_GlobalCrewServices.framework */; };
 		DB0CE37D2148EFF100487128 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0CE37C2148EFF100487128 /* AppDelegate.swift */; };
-		DB0CE37F2148EFF100487128 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0CE37E2148EFF100487128 /* ViewController.swift */; };
+		DB0CE37F2148EFF100487128 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0CE37E2148EFF100487128 /* HomeVC.swift */; };
 		DB0CE3822148EFF100487128 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB0CE3802148EFF100487128 /* Main.storyboard */; };
 		DB0CE3842148EFF300487128 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB0CE3832148EFF300487128 /* Assets.xcassets */; };
 		DB0CE3872148EFF300487128 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB0CE3852148EFF300487128 /* LaunchScreen.storyboard */; };
+		DB5F8CCE2148F58F00ACDBB4 /* RideDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5F8CCD2148F58F00ACDBB4 /* RideDetailsVC.swift */; };
+		DB5F8CD12148FB3500ACDBB4 /* textFieldBeutify.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5F8CD02148FB3500ACDBB4 /* textFieldBeutify.swift */; };
+		DB5F8CD52149075900ACDBB4 /* CSVParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5F8CD42149075900ACDBB4 /* CSVParser.swift */; };
+		DB5F8CD72149086A00ACDBB4 /* Port-List.csv in Resources */ = {isa = PBXBuildFile; fileRef = DB5F8CD62149086A00ACDBB4 /* Port-List.csv */; };
+		DB70697F214998CA0066CDCD /* PortModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB70697E214998CA0066CDCD /* PortModel.swift */; };
+		DB70698121499D120066CDCD /* PortModelPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB70698021499D120066CDCD /* PortModelPicker.swift */; };
+		DB7069852149C6DA0066CDCD /* DatePickerBeutify.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7069842149C6DA0066CDCD /* DatePickerBeutify.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		14CBD2A4D36893E1B0F205C3 /* Pods-GlobalCrewServices.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GlobalCrewServices.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GlobalCrewServices/Pods-GlobalCrewServices.debug.xcconfig"; sourceTree = "<group>"; };
+		18B61E61F3F563A861BFBDB3 /* Pods_GlobalCrewServices.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GlobalCrewServices.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB0CE3792148EFF100487128 /* GlobalCrewServices.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GlobalCrewServices.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB0CE37C2148EFF100487128 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DB0CE37E2148EFF100487128 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DB0CE37E2148EFF100487128 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		DB0CE3812148EFF100487128 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DB0CE3832148EFF300487128 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB0CE3862148EFF300487128 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB0CE3882148EFF300487128 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB5F8CCD2148F58F00ACDBB4 /* RideDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideDetailsVC.swift; sourceTree = "<group>"; };
+		DB5F8CD02148FB3500ACDBB4 /* textFieldBeutify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textFieldBeutify.swift; sourceTree = "<group>"; };
+		DB5F8CD42149075900ACDBB4 /* CSVParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVParser.swift; sourceTree = "<group>"; };
+		DB5F8CD62149086A00ACDBB4 /* Port-List.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Port-List.csv"; sourceTree = "<group>"; };
+		DB70697E214998CA0066CDCD /* PortModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortModel.swift; sourceTree = "<group>"; };
+		DB70698021499D120066CDCD /* PortModelPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortModelPicker.swift; sourceTree = "<group>"; };
+		DB7069842149C6DA0066CDCD /* DatePickerBeutify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerBeutify.swift; sourceTree = "<group>"; };
+		F50D83E7B688AC237EB28363 /* Pods-GlobalCrewServices.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GlobalCrewServices.release.xcconfig"; path = "Pods/Target Support Files/Pods-GlobalCrewServices/Pods-GlobalCrewServices.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +47,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AEFC592AD9F65E6F8946A93 /* Pods_GlobalCrewServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		988AFA9C4294F356F3786CA3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				18B61E61F3F563A861BFBDB3 /* Pods_GlobalCrewServices.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DB0CE3702148EFF100487128 = {
 			isa = PBXGroup;
 			children = (
 				DB0CE37B2148EFF100487128 /* GlobalCrewServices */,
 				DB0CE37A2148EFF100487128 /* Products */,
+				F6D9040555E591D8A7D09C95 /* Pods */,
+				988AFA9C4294F356F3786CA3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +83,70 @@
 		DB0CE37B2148EFF100487128 /* GlobalCrewServices */ = {
 			isa = PBXGroup;
 			children = (
+				DB70697D214998B70066CDCD /* Model */,
+				DB70697A2149985A0066CDCD /* View */,
+				DB5F8CD32149074300ACDBB4 /* Helpers */,
+				DB5F8CCF2148FB1000ACDBB4 /* UI-Items */,
+				DB5F8CCC2148F57000ACDBB4 /* Controllers */,
 				DB0CE37C2148EFF100487128 /* AppDelegate.swift */,
-				DB0CE37E2148EFF100487128 /* ViewController.swift */,
 				DB0CE3802148EFF100487128 /* Main.storyboard */,
 				DB0CE3832148EFF300487128 /* Assets.xcassets */,
 				DB0CE3852148EFF300487128 /* LaunchScreen.storyboard */,
 				DB0CE3882148EFF300487128 /* Info.plist */,
 			);
 			path = GlobalCrewServices;
+			sourceTree = "<group>";
+		};
+		DB5F8CCC2148F57000ACDBB4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DB0CE37E2148EFF100487128 /* HomeVC.swift */,
+				DB5F8CCD2148F58F00ACDBB4 /* RideDetailsVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DB5F8CCF2148FB1000ACDBB4 /* UI-Items */ = {
+			isa = PBXGroup;
+			children = (
+				DB5F8CD02148FB3500ACDBB4 /* textFieldBeutify.swift */,
+				DB7069842149C6DA0066CDCD /* DatePickerBeutify.swift */,
+			);
+			path = "UI-Items";
+			sourceTree = "<group>";
+		};
+		DB5F8CD32149074300ACDBB4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DB5F8CD42149075900ACDBB4 /* CSVParser.swift */,
+				DB5F8CD62149086A00ACDBB4 /* Port-List.csv */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		DB70697A2149985A0066CDCD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DB70698021499D120066CDCD /* PortModelPicker.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DB70697D214998B70066CDCD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DB70697E214998CA0066CDCD /* PortModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F6D9040555E591D8A7D09C95 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				14CBD2A4D36893E1B0F205C3 /* Pods-GlobalCrewServices.debug.xcconfig */,
+				F50D83E7B688AC237EB28363 /* Pods-GlobalCrewServices.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,6 +156,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DB0CE38B2148EFF300487128 /* Build configuration list for PBXNativeTarget "GlobalCrewServices" */;
 			buildPhases = (
+				82CE1B2316F0984454C1F3CC /* [CP] Check Pods Manifest.lock */,
 				DB0CE3752148EFF100487128 /* Sources */,
 				DB0CE3762148EFF100487128 /* Frameworks */,
 				DB0CE3772148EFF100487128 /* Resources */,
@@ -123,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB0CE3872148EFF300487128 /* LaunchScreen.storyboard in Resources */,
+				DB5F8CD72149086A00ACDBB4 /* Port-List.csv in Resources */,
 				DB0CE3842148EFF300487128 /* Assets.xcassets in Resources */,
 				DB0CE3822148EFF100487128 /* Main.storyboard in Resources */,
 			);
@@ -130,12 +217,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		82CE1B2316F0984454C1F3CC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GlobalCrewServices-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DB0CE3752148EFF100487128 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB0CE37F2148EFF100487128 /* ViewController.swift in Sources */,
+				DB70697F214998CA0066CDCD /* PortModel.swift in Sources */,
+				DB5F8CD52149075900ACDBB4 /* CSVParser.swift in Sources */,
+				DB0CE37F2148EFF100487128 /* HomeVC.swift in Sources */,
+				DB5F8CCE2148F58F00ACDBB4 /* RideDetailsVC.swift in Sources */,
+				DB5F8CD12148FB3500ACDBB4 /* textFieldBeutify.swift in Sources */,
+				DB70698121499D120066CDCD /* PortModelPicker.swift in Sources */,
+				DB7069852149C6DA0066CDCD /* DatePickerBeutify.swift in Sources */,
 				DB0CE37D2148EFF100487128 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,6 +392,7 @@
 		};
 		DB0CE38C2148EFF300487128 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14CBD2A4D36893E1B0F205C3 /* Pods-GlobalCrewServices.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -296,6 +411,7 @@
 		};
 		DB0CE38D2148EFF300487128 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F50D83E7B688AC237EB28363 /* Pods-GlobalCrewServices.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
