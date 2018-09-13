@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class RideDetailsVC: UIViewController, UIGestureRecognizerDelegate {
 
@@ -26,11 +27,16 @@ class RideDetailsVC: UIViewController, UIGestureRecognizerDelegate {
     var toLocation: String!
     var pickUpDetails: String!
     
+    //User
+    var user: User?
+    var uid: String?
+    
+    
     var dateFormatter = DateFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         portModelPicker = PortModelPicker()
         
         self.parseCSV {
@@ -65,7 +71,7 @@ class RideDetailsVC: UIViewController, UIGestureRecognizerDelegate {
     @objc func backgroundTapped() {
         view.endEditing(true)
     }
-
+    
     func parseCSV(OnComplete: @escaping () -> ()) {
         
         guard let path = Bundle.main.path(forResource: "Port-List", ofType: "csv") else { return }
@@ -90,12 +96,41 @@ class RideDetailsVC: UIViewController, UIGestureRecognizerDelegate {
     
     @IBAction func confirmRideClicked(_ sender: Any) {
         
-        
         self.fromLocation = portModelPicker.portModelArray[fromLocationPickerView.selectedRow(inComponent: 0)].portCity
         self.toLocation = portModelPicker.portModelArray[toLocationPickerView.selectedRow(inComponent: 0)].portCity
         dateFormatter.setLocalizedDateFormatFromTemplate("cccc, MMM d, hh:mm aa")
         self.pickUpDetails = dateFormatter.string(from: pickUpDetailsPickerView.date)
         
+        uploadRideDetails()
+        
+    }
+    
+    func uploadRideDetails() {
+        
+        guard let vesselName = self.textFieldVesselName.text, vesselName != "" else {
+            //Present alert
+            let alert = UIAlertController(title: "Alert", message: "Please Enter Vessel Name", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                self.textFieldVesselName.becomeFirstResponder()
+            }))
+            self.present(alert, animated: true, completion: nil)
+            
+            return }
+        
+        guard let uid = self.uid else { return }
+        let bookingConfirmation = Int(arc4random_uniform(100000) + 1)
+        let userData = ["Vessel_Name": vesselName, "From_Port": self.fromLocation, "To_Port": self.toLocation, "Date_and_Time": self.pickUpDetails, "confirmationCode": "\(bookingConfirmation)"]
+        DataService.instance.createDBUserProfile(uid: uid, userData: userData as! Dictionary<String, String>)
+        confirmationDisplay()
+        
+    }
+    
+    func confirmationDisplay() {
+        let alert = UIAlertController(title: "Congratulations", message: "Your Ride has been confirmed. Details along with the confirmation code have been sent to your dispatch email. Please check email for further inquiries", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+            self.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
 }
@@ -107,16 +142,16 @@ extension RideDetailsVC: UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        guard let vesselname = textField.text else {
-            textField.placeholder = "Vessel Name"
+        guard let _ = textField.text else {
+        textField.attributedPlaceholder = NSAttributedString(string: "Vessel Name", attributes: [NSAttributedStringKey.foregroundColor : UIColor.white])
             return
-        }
-        if vesselname != "" {
-            self.vesselName = vesselname
         }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if (textField.text?.isEmpty)! || textField.text == "" {
+            textField.attributedPlaceholder = NSAttributedString(string: "Vessel Name", attributes: [NSAttributedStringKey.foregroundColor : UIColor.white])
+        }
         textField.resignFirstResponder()
         return false
     }

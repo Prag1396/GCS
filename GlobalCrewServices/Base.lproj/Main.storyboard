@@ -68,7 +68,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="QfC-tp-CwF" kind="show" id="hQC-eM-w82"/>
+                                    <action selector="requestRidePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a7b-3K-vVe"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -90,6 +90,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="requestRideButton" destination="02V-Tx-02v" id="gIg-4h-zas"/>
+                        <segue destination="QfC-tp-CwF" kind="show" identifier="toridedetailsvc" id="FOW-WF-Zyj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

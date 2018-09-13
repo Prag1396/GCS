@@ -20,6 +20,9 @@
 		DB70697F214998CA0066CDCD /* PortModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB70697E214998CA0066CDCD /* PortModel.swift */; };
 		DB70698121499D120066CDCD /* PortModelPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB70698021499D120066CDCD /* PortModelPicker.swift */; };
 		DB7069852149C6DA0066CDCD /* DatePickerBeutify.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7069842149C6DA0066CDCD /* DatePickerBeutify.swift */; };
+		DB7069872149D9850066CDCD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB7069862149D9850066CDCD /* GoogleService-Info.plist */; };
+		DB70698A2149DAF20066CDCD /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7069892149DAF20066CDCD /* DataService.swift */; };
+		DB70698C2149E7150066CDCD /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB70698B2149E7150066CDCD /* AuthService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +42,9 @@
 		DB70697E214998CA0066CDCD /* PortModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortModel.swift; sourceTree = "<group>"; };
 		DB70698021499D120066CDCD /* PortModelPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortModelPicker.swift; sourceTree = "<group>"; };
 		DB7069842149C6DA0066CDCD /* DatePickerBeutify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerBeutify.swift; sourceTree = "<group>"; };
+		DB7069862149D9850066CDCD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DB7069892149DAF20066CDCD /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		DB70698B2149E7150066CDCD /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		F50D83E7B688AC237EB28363 /* Pods-GlobalCrewServices.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GlobalCrewServices.release.xcconfig"; path = "Pods/Target Support Files/Pods-GlobalCrewServices/Pods-GlobalCrewServices.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,6 +89,7 @@
 		DB0CE37B2148EFF100487128 /* GlobalCrewServices */ = {
 			isa = PBXGroup;
 			children = (
+				DB7069882149DADD0066CDCD /* Services */,
 				DB70697D214998B70066CDCD /* Model */,
 				DB70697A2149985A0066CDCD /* View */,
 				DB5F8CD32149074300ACDBB4 /* Helpers */,
@@ -92,6 +99,7 @@
 				DB0CE3802148EFF100487128 /* Main.storyboard */,
 				DB0CE3832148EFF300487128 /* Assets.xcassets */,
 				DB0CE3852148EFF300487128 /* LaunchScreen.storyboard */,
+				DB7069862149D9850066CDCD /* GoogleService-Info.plist */,
 				DB0CE3882148EFF300487128 /* Info.plist */,
 			);
 			path = GlobalCrewServices;
@@ -140,6 +148,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		DB7069882149DADD0066CDCD /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DB7069892149DAF20066CDCD /* DataService.swift */,
+				DB70698B2149E7150066CDCD /* AuthService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		F6D9040555E591D8A7D09C95 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +177,7 @@
 				DB0CE3752148EFF100487128 /* Sources */,
 				DB0CE3762148EFF100487128 /* Frameworks */,
 				DB0CE3772148EFF100487128 /* Resources */,
+				CB1BAB6CAA2A35B86D32F4AD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -210,6 +228,7 @@
 			files = (
 				DB0CE3872148EFF300487128 /* LaunchScreen.storyboard in Resources */,
 				DB5F8CD72149086A00ACDBB4 /* Port-List.csv in Resources */,
+				DB7069872149D9850066CDCD /* GoogleService-Info.plist in Resources */,
 				DB0CE3842148EFF300487128 /* Assets.xcassets in Resources */,
 				DB0CE3822148EFF100487128 /* Main.storyboard in Resources */,
 			);
@@ -236,6 +255,30 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		CB1BAB6CAA2A35B86D32F4AD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GlobalCrewServices/Pods-GlobalCrewServices-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GlobalCrewServices/Pods-GlobalCrewServices-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -243,12 +286,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB70698A2149DAF20066CDCD /* DataService.swift in Sources */,
 				DB70697F214998CA0066CDCD /* PortModel.swift in Sources */,
 				DB5F8CD52149075900ACDBB4 /* CSVParser.swift in Sources */,
 				DB0CE37F2148EFF100487128 /* HomeVC.swift in Sources */,
 				DB5F8CCE2148F58F00ACDBB4 /* RideDetailsVC.swift in Sources */,
 				DB5F8CD12148FB3500ACDBB4 /* textFieldBeutify.swift in Sources */,
 				DB70698121499D120066CDCD /* PortModelPicker.swift in Sources */,
+				DB70698C2149E7150066CDCD /* AuthService.swift in Sources */,
 				DB7069852149C6DA0066CDCD /* DatePickerBeutify.swift in Sources */,
 				DB0CE37D2148EFF100487128 /* AppDelegate.swift in Sources */,
 			);

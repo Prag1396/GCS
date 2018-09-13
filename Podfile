@@ -6,5 +6,8 @@ target 'GlobalCrewServices' do
   use_frameworks!
 
   # Pods for GlobalCrewServices
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
+  pod 'Firebase/Auth'
 
 end
