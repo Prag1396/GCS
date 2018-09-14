@@ -43,38 +43,17 @@ class HomeVC: UIViewController {
     private var numPadArray: [UIButton] = []
     private var authFillArray: [UIImageView] = []
     
-    private var _user: User?
-    private var _uid: String?
     
     private var currCode: String = ""
     
-    var user: User? {
-        return _user
-    }
-    
-    var uid: String? {
-        return _uid
-    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(self.view.frame.width)
         self.setUpKeyPad()
         self.keyPadViewTopContraint.constant = self.view.frame.height
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "toridedetailsvc") {
-            if let destination = segue.destination as? RideDetailsVC {
-                if self._uid != nil && self._user != nil {
-                    destination.user = self._user
-                    destination.uid = self._uid
-                }
-            }
-            
-        }
-    }
     
     func setUpKeyPad() {
         
@@ -120,13 +99,12 @@ class HomeVC: UIViewController {
     
     func valiDateCode() {
         if currCode == gcscode {
-            self.createAnonymousUser {
-                self.dismissAuthView()
-                self.performSegue(withIdentifier: "toridedetailsvc", sender: (Any).self)
-            }
+            
+            self.dismissAuthView()
+            self.performSegue(withIdentifier: "toridedetailsvc", sender: (Any).self)
+            
         } else {
             //show alert saying code does not match
-            print("Failure")
             let alert = UIAlertController(title: "Alert", message: "Wrong Code. Please contact Global Crew Services for personalized Transportational Services", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in }))
             self.present(alert, animated: true) {
@@ -150,52 +128,24 @@ class HomeVC: UIViewController {
     @IBAction func requestRidePressed(_ sender: Any) {
         
         if UserDefaults.standard.bool(forKey: "hasLaunchedBefore") == false {
-            print("First Launch")
             do {
                 try Auth.auth().signOut()
             } catch {
                 print(error.localizedDescription)
             }
             
-            UserDefaults.standard.set(true, forKey: "hasLaunchedBefore")
-            UserDefaults.standard.synchronize()
-            
             self.displayAuthView()
             
         } else {
-            print("Not First Launch")
-            self._user = Auth.auth().currentUser
-            self._uid = Auth.auth().currentUser?.uid
-            performSegue(withIdentifier: "toridedetailsvc", sender: (Any).self)
+            performSegue(withIdentifier: "toridedetailsvc", sender: Any.self)
         }
     }
     
     func displayAuthView() {
         UIView.animate(withDuration: 1.0) {
-            self.keyPadViewTopContraint.constant = 170
+            self.keyPadViewTopContraint.constant = 200
             self.view.layoutIfNeeded()
         }
-    }
-    
-    func createAnonymousUser(onComplete: @escaping()->()) {
-    
-        //make new UserID
-        Auth.auth().signInAnonymously { (AuthResult, error) in
-            if error != nil {
-                AuthService.instance.handleErrorCode(error: error! as NSError, onCompleteErrorHandler: { (messageString, object) in
-                    //Present Alert
-                    let alert = UIAlertController(title: "Alert", message: messageString, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-                    self.present(alert, animated: true, completion: nil)
-                })
-            } else {
-                self._user = AuthResult?.user
-                self._uid = AuthResult?.user.uid
-                onComplete()
-            }
-            
-        }
-        
     }
     
 }

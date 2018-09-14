@@ -35,7 +35,8 @@ function createEmail(rideId) {
         to: "praguns100@gmail.com", // list of receivers
         subject: "New ride confirmed from mobile app", // Subject line
         html: "From Location: " + rideId.From_Port + "<br>" + "To Location: " + rideId.To_Port + "<br>" + 
-        "Vessel Name: " + rideId.Vessel_Name + "<br>" + "Confirmation Code: " + rideId.confirmationCode 
+        "Vessel Name: " + rideId.Vessel_Name + "<br>" + "Date and Time: " + rideId.Date_and_Time + "<br>" +
+        "Confirmation Code: " + rideId.confirmationCode 
     }
  
     // send mail with defined transport object

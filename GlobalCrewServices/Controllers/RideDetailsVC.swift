@@ -16,6 +16,7 @@ class RideDetailsVC: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var fromLocationPickerView: UIPickerView!
     @IBOutlet weak var toLocationPickerView: UIPickerView!
     @IBOutlet weak var pickUpDetailsPickerView: UIDatePicker!
+    @IBOutlet weak var confirmRideBtn: UIButton!
     
     var PortModelArray: [PortModel] = []
     var portModelPicker: PortModelPicker!
@@ -28,8 +29,8 @@ class RideDetailsVC: UIViewController, UIGestureRecognizerDelegate {
     var pickUpDetails: String!
     
     //User
-    var user: User?
-    var uid: String?
+    private var _user: User?
+    private var _uid: String?
     
     
     var dateFormatter = DateFormatter()
@@ -38,13 +39,10 @@ class RideDetailsVC: UIViewController, UIGestureRecognizerDelegate {
         super.viewDidLoad()
         
         portModelPicker = PortModelPicker()
-        
-        
+        checkifLaunchedBefore()
         self.parseCSV {
             self.portModelPicker.portModelArray = self.PortModelArray
-            
         }
-        
         textFieldVesselName.delegate = self
         
         var originalY = fromLocationPickerView.frame.origin.y
@@ -70,6 +68,39 @@ class RideDetailsVC: UIViewController, UIGestureRecognizerDelegate {
     
     @objc func backgroundTapped() {
         view.endEditing(true)
+    }
+    
+    func checkifLaunchedBefore() {
+        if UserDefaults.standard.bool(forKey: "hasLaunchedBefore") == false {
+            
+            UserDefaults.standard.set(true, forKey: "hasLaunchedBefore")
+            UserDefaults.standard.synchronize()
+            self.createAnonymousUser {
+                self.confirmRideBtn.isUserInteractionEnabled = true
+            }
+        } else {
+            self._uid = Auth.auth().currentUser?.uid
+        }
+    }
+    
+    func createAnonymousUser(onComplete: @escaping()->()) {
+        
+        //make new UserID
+        Auth.auth().signInAnonymously { (AuthResult, error) in
+            if error != nil {
+                AuthService.instance.handleErrorCode(error: error! as NSError, onCompleteErrorHandler: { (messageString, object) in
+                    //Present Alert
+                    let alert = UIAlertController(title: "Alert", message: messageString, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                })
+            } else {
+                self._uid = AuthResult?.user.uid
+                onComplete()
+            }
+            
+        }
+        
     }
     
     func parseCSV(OnComplete: @escaping () -> ()) {
@@ -117,8 +148,10 @@ class RideDetailsVC: UIViewController, UIGestureRecognizerDelegate {
             
             return }
         
-        guard let uid = self.uid else { return }
+        guard let uid = self._uid else { return }
         let bookingConfirmation = Int(arc4random_uniform(100000) + 1)
+        print(self.pickUpDetails)
+        print(uid)
         let userData = ["Vessel_Name": vesselName, "From_Port": self.fromLocation, "To_Port": self.toLocation, "Date_and_Time": self.pickUpDetails, "confirmationCode": "\(bookingConfirmation)"]
         DataService.instance.createDBUserProfile(uid: uid, userData: userData as! Dictionary<String, String>)
         confirmationDisplay()
