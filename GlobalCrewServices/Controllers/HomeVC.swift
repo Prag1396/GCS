@@ -59,6 +59,7 @@ class HomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(self.view.frame.width)
         self.setUpKeyPad()
         self.keyPadViewTopContraint.constant = self.view.frame.height
     }

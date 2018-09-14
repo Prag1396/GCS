@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,17 +15,17 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeVC" customModule="GlobalCrewServices" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image+BG" translatesAutoresizingMaskIntoConstraints="NO" id="2ws-fb-nrx">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5I0-2X-F83">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Title" translatesAutoresizingMaskIntoConstraints="NO" id="kA4-vI-ZKg">
-                                        <rect key="frame" x="21" y="45" width="333" height="125"/>
+                                        <rect key="frame" x="21.333333333333343" y="45" width="333" height="125"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="333" id="bvy-WG-35k"/>
                                             <constraint firstAttribute="height" constant="125" id="lEq-b6-pUJ"/>
@@ -40,10 +40,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c2X-eR-TS6">
-                                <rect key="frame" x="0.0" y="200" width="375" height="330"/>
+                                <rect key="frame" x="0.0" y="200" width="375" height="441"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CarIcon" translatesAutoresizingMaskIntoConstraints="NO" id="VeA-wi-I5F">
-                                        <rect key="frame" x="0.0" y="53" width="375" height="277"/>
+                                        <rect key="frame" x="0.33333333333334281" y="164" width="375" height="277"/>
                                         <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="375" id="MM2-11-sP7"/>
@@ -58,7 +58,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="02V-Tx-02v">
-                                <rect key="frame" x="37.5" y="560" width="300" height="72"/>
+                                <rect key="frame" x="37.666666666666657" y="671" width="300" height="72"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="72" id="Oue-ew-nIo"/>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="TS8-zb-7ur"/>
@@ -72,10 +72,10 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jTa-hs-IMh">
-                                <rect key="frame" x="0.0" y="170" width="375" height="497"/>
+                                <rect key="frame" x="0.0" y="170" width="375" height="642"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ENTER COMPANY CODE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W6i-EA-DMK">
-                                        <rect key="frame" x="48" y="30" width="279.5" height="50"/>
+                                        <rect key="frame" x="48.333333333333343" y="30" width="279.33333333333326" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="ASl-m8-Ebw"/>
                                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="310" id="afv-bS-0KM"/>
@@ -85,16 +85,16 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="tfc-oR-JR2">
-                                        <rect key="frame" x="96" y="95" width="183" height="27"/>
+                                        <rect key="frame" x="96.333333333333314" y="95" width="183" height="27"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AuthCodeFill" translatesAutoresizingMaskIntoConstraints="NO" id="CqE-TL-Q21" userLabel="AuthCodeFill0">
                                                 <rect key="frame" x="0.0" y="0.0" width="27" height="27"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AuthCodeFill" translatesAutoresizingMaskIntoConstraints="NO" id="6IY-eY-UkM" userLabel="AuthCodeFill1">
-                                                <rect key="frame" x="52" y="0.0" width="27" height="27"/>
+                                                <rect key="frame" x="52.000000000000014" y="0.0" width="27" height="27"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AuthCodeFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ON-oL-r0s" userLabel="AuthCodeFill2">
-                                                <rect key="frame" x="104" y="0.0" width="27" height="27"/>
+                                                <rect key="frame" x="104.00000000000001" y="0.0" width="26.999999999999986" height="27"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" tag="4" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AuthCodeFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sdm-YF-Rqw" userLabel="AuthCodeFill3">
                                                 <rect key="frame" x="156" y="0.0" width="27" height="27"/>
@@ -106,7 +106,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ijt-aN-BFW">
-                                        <rect key="frame" x="52.5" y="152" width="270" height="325"/>
+                                        <rect key="frame" x="52.666666666666657" y="152" width="270" height="325"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="gQZ-ao-cu2" userLabel="DialPadRow1">
                                                 <rect key="frame" x="0.0" y="0.0" width="270" height="70"/>
@@ -252,7 +252,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="jTa-hs-IMh" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="2PK-ZS-YFD"/>
-                            <constraint firstItem="jTa-hs-IMh" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="91y-Yb-U2o"/>
+                            <constraint firstItem="jTa-hs-IMh" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="91y-Yb-U2o"/>
                             <constraint firstItem="2ws-fb-nrx" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="HT9-do-N4Z"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="02V-Tx-02v" secondAttribute="bottom" constant="35" id="J0M-Tc-T4b"/>
                             <constraint firstItem="c2X-eR-TS6" firstAttribute="top" secondItem="5I0-2X-F83" secondAttribute="bottom" id="LJt-gt-XIf"/>
@@ -302,14 +302,14 @@
             <objects>
                 <viewController id="QfC-tp-CwF" customClass="RideDetailsVC" customModule="GlobalCrewServices" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zrp-1l-wU6">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Img+bg+rideDetails" translatesAutoresizingMaskIntoConstraints="NO" id="hQ8-v6-IxU">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="VESSEL NAME" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="byv-8H-P8f" customClass="textFieldBeutify" customModule="GlobalCrewServices" customModuleProvider="target">
-                                <rect key="frame" x="37" y="35" width="300" height="45"/>
+                                <rect key="frame" x="37.666666666666657" y="59" width="300" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="0.52263484589041098" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="6QB-K3-qtq"/>
@@ -320,7 +320,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="gWJ-jc-Ibm" userLabel="All Views">
-                                <rect key="frame" x="0.0" y="94" width="375" height="479"/>
+                                <rect key="frame" x="0.0" y="166.66666666666663" width="375" height="479"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="JKh-NC-4it" userLabel="Top">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="143"/>
@@ -329,7 +329,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FROM LOCATION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFB-1j-MdA">
-                                                        <rect key="frame" x="15" y="5" width="133.5" height="33"/>
+                                                        <rect key="frame" x="15" y="5" width="133.33333333333334" height="33"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="144" id="8Yo-vQ-bpc"/>
                                                             <constraint firstAttribute="height" constant="33" id="I5b-4M-ECr"/>
@@ -352,7 +352,7 @@
                                                 <subviews>
                                                     <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cpc-Oh-Nyd" customClass="PortModelPicker" customModule="GlobalCrewServices" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     </pickerView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.34999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -361,15 +361,18 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="rzJ-SQ-IEH" firstAttribute="centerX" secondItem="JKh-NC-4it" secondAttribute="centerX" id="wng-Ii-fJ1"/>
+                                        </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="r3l-Tu-S9l" userLabel="Middle">
-                                        <rect key="frame" x="0.0" y="158" width="375" height="143"/>
+                                        <rect key="frame" x="0.0" y="158.00000000000003" width="375" height="142.99999999999997"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lyI-3E-uYg" userLabel="ToLocationView">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TO LOCATION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2H-F6-cCY">
-                                                        <rect key="frame" x="15" y="5" width="108.5" height="33"/>
+                                                        <rect key="frame" x="15.000000000000007" y="5" width="108.66666666666669" height="33"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="33" id="bCJ-Bb-8QL"/>
                                                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="115.5" id="dzz-vh-0TP"/>
@@ -392,7 +395,7 @@
                                                 <subviews>
                                                     <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dcm-bQ-qur" customClass="PortModelPicker" customModule="GlobalCrewServices" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     </pickerView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.34999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -401,6 +404,9 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="c0k-8M-NIs" firstAttribute="centerX" secondItem="r3l-Tu-S9l" secondAttribute="centerX" id="mMK-HY-1hb"/>
+                                        </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="olD-Hn-KXe" userLabel="Bottom">
                                         <rect key="frame" x="0.0" y="316" width="375" height="163"/>
@@ -409,7 +415,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PICK-UP DETAILS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZF-R2-Ga9">
-                                                        <rect key="frame" x="15" y="5" width="128.5" height="33"/>
+                                                        <rect key="frame" x="15" y="5" width="128.33333333333334" height="33"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="33" id="45h-np-Mex"/>
                                                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="151.5" id="tg9-3a-fKE"/>
@@ -428,7 +434,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZYM-SN-TeG" userLabel="PickeUpDetailsPVView">
-                                                <rect key="frame" x="0.0" y="43" width="375" height="120"/>
+                                                <rect key="frame" x="0.0" y="42.999999999999943" width="375" height="120"/>
                                                 <subviews>
                                                     <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="sSl-kD-nZa" customClass="DatePickerBeutify" customModule="GlobalCrewServices" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
@@ -453,7 +459,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="djr-bl-yAz">
-                                <rect key="frame" x="67" y="599" width="240" height="48"/>
+                                <rect key="frame" x="67.666666666666686" y="710" width="240" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="EYg-yf-GE7"/>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="240" id="nFX-8B-Eqq"/>
@@ -494,7 +500,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Oy-Kb-h1g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="898.39999999999998" y="131.78410794602701"/>
+            <point key="canvasLocation" x="898.39999999999998" y="131.52709359605913"/>
         </scene>
     </scenes>
     <resources>

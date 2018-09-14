@@ -39,6 +39,7 @@ class RideDetailsVC: UIViewController, UIGestureRecognizerDelegate {
         
         portModelPicker = PortModelPicker()
         
+        
         self.parseCSV {
             self.portModelPicker.portModelArray = self.PortModelArray
             
@@ -48,18 +49,17 @@ class RideDetailsVC: UIViewController, UIGestureRecognizerDelegate {
         
         var originalY = fromLocationPickerView.frame.origin.y
         fromLocationPickerView.transform = CGAffineTransform(rotationAngle: rotationAngle)
-        fromLocationPickerView.frame = CGRect(x: -140, y: originalY, width: view.frame.width + 220, height: 100)
+        fromLocationPickerView.frame = CGRect(x: -100, y: originalY, width: view.frame.width + 200, height: 100)
         fromLocationPickerView.delegate = portModelPicker
         fromLocationPickerView.dataSource = portModelPicker
         fromLocationPickerView.selectRow(2, inComponent: 0, animated: true)
         
         originalY = toLocationPickerView.frame.origin.y
         toLocationPickerView.transform = CGAffineTransform(rotationAngle: rotationAngle)
-        toLocationPickerView.frame = CGRect(x: -140, y: originalY, width: view.frame.width + 220, height: 100)
+        toLocationPickerView.frame = CGRect(x: -100, y: originalY, width: view.frame.width + 200, height: 100)
         toLocationPickerView.delegate = portModelPicker
         toLocationPickerView.dataSource = portModelPicker
         toLocationPickerView.selectRow(2, inComponent: 0, animated: true)
-        
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(backgroundTapped))
         background.addGestureRecognizer(tap)

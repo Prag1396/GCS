@@ -37,15 +37,15 @@ extension PortModelPicker: UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
-        return 125
+        return 100
     }
     
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: 125, height: 100))
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
         
-        let codeLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 125, height: 50))
+        let codeLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
         codeLabel.text = portModelArray[row].portCode
         codeLabel.textColor = UIColor.white
         codeLabel.textAlignment = .center
@@ -62,12 +62,12 @@ extension PortModelPicker: UIPickerViewDataSource, UIPickerViewDelegate {
 
         
         
-        let cityLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 125, height: 25))
+        let cityLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 25))
         cityLabel.text = portModelArray[row].portCity
         cityLabel.textAlignment = .center
         cityLabel.textColor = UIColor.white
         cityLabel.translatesAutoresizingMaskIntoConstraints = false
-        cityLabel.font = UIFont(name: "Avenir Next", size: 18)
+        cityLabel.font = UIFont(name: "Avenir Next", size: 16)
         view.addSubview(cityLabel)
         
         let xConstraintcityLabel = NSLayoutConstraint(item: cityLabel, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0)
