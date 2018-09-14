@@ -143,14 +143,14 @@ extension RideDetailsVC: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         guard let _ = textField.text else {
-        textField.attributedPlaceholder = NSAttributedString(string: "Vessel Name", attributes: [NSAttributedStringKey.foregroundColor : UIColor.white])
+        textField.attributedPlaceholder = NSAttributedString(string: "VESSEL NAME", attributes: [NSAttributedStringKey.foregroundColor : UIColor.white])
             return
         }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if (textField.text?.isEmpty)! || textField.text == "" {
-            textField.attributedPlaceholder = NSAttributedString(string: "Vessel Name", attributes: [NSAttributedStringKey.foregroundColor : UIColor.white])
+            textField.attributedPlaceholder = NSAttributedString(string: "VESSEL NAME", attributes: [NSAttributedStringKey.foregroundColor : UIColor.white])
         }
         textField.resignFirstResponder()
         return false

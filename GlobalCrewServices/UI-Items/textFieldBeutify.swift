@@ -26,7 +26,7 @@ class textFieldBeutify: UITextField {
 
     override func draw(_ rect: CGRect) {
         // Drawing code
-        self.attributedPlaceholder = NSAttributedString(string: "Vessel Name", attributes: [NSAttributedStringKey.foregroundColor : UIColor.white])
+        self.attributedPlaceholder = NSAttributedString(string: "VESSEL NAME", attributes: [NSAttributedStringKey.foregroundColor : UIColor.white])
         self.layer.cornerRadius = 10
         self.layer.masksToBounds = true
         

@@ -13,6 +13,34 @@ class HomeVC: UIViewController {
     
     @IBOutlet weak var requestRideButton: UIButton!
     
+    
+    //KeyPadView
+    @IBOutlet weak var keypadView: UIView!
+    @IBOutlet weak var keyPadViewTopContraint: NSLayoutConstraint!
+    
+    
+    //Fill Auth Codes
+    @IBOutlet weak var authCodeFill1: UIImageView!
+    @IBOutlet weak var authCodeFill2: UIImageView!
+    @IBOutlet weak var authCodeFill3: UIImageView!
+    @IBOutlet weak var authCodeFill4: UIImageView!
+    
+    //KeyPad
+    @IBOutlet weak var number1: UIButton!
+    @IBOutlet weak var number2: UIButton!
+    @IBOutlet weak var number3: UIButton!
+    @IBOutlet weak var number4: UIButton!
+    @IBOutlet weak var number5: UIButton!
+    @IBOutlet weak var number6: UIButton!
+    @IBOutlet weak var number7: UIButton!
+    @IBOutlet weak var number8: UIButton!
+    @IBOutlet weak var number9: UIButton!
+    @IBOutlet weak var number0: UIButton!
+    @IBOutlet weak var backspace: UIButton!
+    
+    
+    
+    
     private var _user: User?
     private var _uid: String?
     
@@ -27,6 +55,7 @@ class HomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         requestRideButton.isUserInteractionEnabled = false
         self.createAnonymousUser {
             self.requestRideButton.isUserInteractionEnabled = true
