@@ -14,7 +14,7 @@ class textViewBeutify: UITextView {
         // Drawing code
         self.layer.cornerRadius = 10
         self.layer.masksToBounds = true
-        self.textContainerInset = UIEdgeInsets(top: 10, left: 5, bottom: 5, right: 5)
+        self.textContainerInset = UIEdgeInsets(top: 10, left: 5, bottom: 10, right: 5)
     }
 
     

@@ -36,7 +36,8 @@ function createEmail(rideId) {
         subject: rideId.Date_and_Time, // Subject line
         html: "From Location: " + rideId.From_Port + "<br>" + "To Location: " + rideId.To_Port + "<br>" + 
         "Vessel Name: " + rideId.Vessel_Name + "<br>" +
-        "Confirmation Code: " + rideId.confirmationCode 
+        "Confirmation Code: " + rideId.confirmationCode  + "<br>" +
+        "Notes: " + rideId.Notes
     }
  
     // send mail with defined transport object

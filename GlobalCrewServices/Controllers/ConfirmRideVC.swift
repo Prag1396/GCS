@@ -19,12 +19,14 @@ class ConfirmRideVC: UIViewController, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var notesView: textViewBeutify!
     @IBOutlet weak var noteHeight: NSLayoutConstraint!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     private var _vesselText: String = ""
     private var _fromLocationtext: String = ""
     private var _toLocationtext: String = ""
     private var _pickupdetailstext: String = ""
     private var _confirmationCode: String = ""
+    private var _notes: String = ""
     
     var vesselText: String = "" {
         didSet {
@@ -68,32 +70,34 @@ class ConfirmRideVC: UIViewController, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         notesView.delegate = self
+        notesView.scrollsToTop = true
         setUpLabels()
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(backgroundTapped))
         backgroundImage.addGestureRecognizer(tap)
         tap.delegate = self
         self.view.addGestureRecognizer(tap)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardChange(notification:)), name: UIWindow.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardChange(notification:)), name: UIWindow.keyboardWillHideNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardChange(notification:)), name: UIWindow.keyboardWillChangeFrameNotification, object: nil)
+
     }
     
-    @objc func keyBoardChange(notification: Notification) {
-        
-        guard let keyboardRect = (notification.userInfo?[UIWindow.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
-        
-        if notification.name == UIWindow.keyboardWillChangeFrameNotification || notification.name == UIWindow.keyboardWillShowNotification {
-            
-            view.frame.origin.y = -keyboardRect.height
-        } else {
-            view.frame.origin.y = 0
-        }
-        
+    func scrollToTop() {
+        self.notesView.setContentOffset(.zero, animated: false)
     }
+    
+    @IBAction func backButtonPressed(_ sender: Any) {
+        
+        let transition = CATransition()
+        transition.duration = 0.25
+        transition.type = CATransitionType.push
+        transition.subtype = CATransitionSubtype.fromLeft
+        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        view.window?.layer.add(transition, forKey: kCATransition)
+        self.dismiss(animated: false, completion: nil)
+    }
+    
     
     @objc func backgroundTapped() {
+        self.scrollToTop()
         view.endEditing(true)
     }
     
@@ -112,9 +116,13 @@ class ConfirmRideVC: UIViewController, UIGestureRecognizerDelegate {
     
     @IBAction func confirmRideClicked(_ sender: Any) {
         
-        //        let userData = ["Vessel_Name": vesselName, "From_Port": self.fromLocation, "To_Port": self.toLocation, "Date_and_Time": self.pickUpDetails, "confirmationCode": "\(bookingConfirmation)"]
-        //        DataService.instance.createDBUserProfile(uid: uid, userData: userData as! Dictionary<String, String>)
-        //        confirmationDisplay()
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        
+        self._notes = notesView.text
+        
+        let userData = ["Vessel_Name": self._vesselText, "From_Port": self._fromLocationtext, "To_Port": self._toLocationtext, "Date_and_Time": self._pickupdetailstext, "confirmationCode": self._confirmationCode, "Notes": self._notes]
+        DataService.instance.createDBUserProfile(uid: uid, userData: userData)
+        confirmationDisplay()
     }
     
     func confirmationDisplay() {
@@ -128,16 +136,16 @@ class ConfirmRideVC: UIViewController, UIGestureRecognizerDelegate {
     func resetSizeforTextView(textView: UITextView) {
         let size = CGSize(width: textView.frame.width, height: .infinity)
         let estimatedSize = textView.sizeThatFits(size)
-        textView.constraints.forEach { (constraint) in
-            if constraint.firstAttribute == .height {
-                constraint.constant = estimatedSize.height
+        if estimatedSize.height < 80 {
+            textView.constraints.forEach { (constraint) in
+                if constraint.firstAttribute == .height {
+                    constraint.constant = estimatedSize.height
+                }
+                let difference = estimatedSize.height - 15
+                self.noteHeight.constant = 35 + difference
             }
-            let difference = estimatedSize.height - 15
-            self.noteHeight.constant = 35 + difference
         }
     }
-    
-    
     
 }
 
@@ -146,4 +154,22 @@ extension ConfirmRideVC: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         self.resetSizeforTextView(textView: textView)
     }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        scrollView.setContentOffset(CGPoint(x: 0, y: 300), animated: true)
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            textView.resignFirstResponder()
+            self.scrollToTop()
+            return false
+        }
+        return true
+    }
+
 }

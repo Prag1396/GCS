@@ -154,7 +154,15 @@ class RideDetailsVC: UIViewController, UIGestureRecognizerDelegate {
         confirmrideVC.toLocText = self.toLocation
         confirmrideVC.pickUpDetailsText = self.pickUpDetails
         confirmrideVC.confirmCodeText = String(self.bookingConfirmation)
-        self.present(confirmrideVC, animated: true, completion: nil)
+        
+        let transition = CATransition()
+        transition.duration = 0.25
+        transition.type = CATransitionType.push
+        transition.subtype = CATransitionSubtype.fromRight
+        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        view.window?.layer.add(transition, forKey: kCATransition)
+        
+        self.present(confirmrideVC, animated: false, completion: nil)
         
         
     }
