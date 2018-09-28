@@ -13,6 +13,7 @@
 		DB0CE3822148EFF100487128 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB0CE3802148EFF100487128 /* Main.storyboard */; };
 		DB0CE3842148EFF300487128 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB0CE3832148EFF300487128 /* Assets.xcassets */; };
 		DB0CE3872148EFF300487128 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB0CE3852148EFF300487128 /* LaunchScreen.storyboard */; };
+		DB0EA896215E049C00E9AAD4 /* textViewBeutify.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0EA895215E049C00E9AAD4 /* textViewBeutify.swift */; };
 		DB5F8CCE2148F58F00ACDBB4 /* RideDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5F8CCD2148F58F00ACDBB4 /* RideDetailsVC.swift */; };
 		DB5F8CD12148FB3500ACDBB4 /* textFieldBeutify.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5F8CD02148FB3500ACDBB4 /* textFieldBeutify.swift */; };
 		DB5F8CD52149075900ACDBB4 /* CSVParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5F8CD42149075900ACDBB4 /* CSVParser.swift */; };
@@ -23,6 +24,8 @@
 		DB7069872149D9850066CDCD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB7069862149D9850066CDCD /* GoogleService-Info.plist */; };
 		DB70698A2149DAF20066CDCD /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7069892149DAF20066CDCD /* DataService.swift */; };
 		DB70698C2149E7150066CDCD /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB70698B2149E7150066CDCD /* AuthService.swift */; };
+		DBCEF537215DB38300F10768 /* ConfirmRideVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCEF536215DB38300F10768 /* ConfirmRideVC.swift */; };
+		DBCEF539215DB9A100F10768 /* LabelBeutify.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCEF538215DB9A100F10768 /* LabelBeutify.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +38,7 @@
 		DB0CE3832148EFF300487128 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB0CE3862148EFF300487128 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB0CE3882148EFF300487128 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB0EA895215E049C00E9AAD4 /* textViewBeutify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textViewBeutify.swift; sourceTree = "<group>"; };
 		DB5F8CCD2148F58F00ACDBB4 /* RideDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideDetailsVC.swift; sourceTree = "<group>"; };
 		DB5F8CD02148FB3500ACDBB4 /* textFieldBeutify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textFieldBeutify.swift; sourceTree = "<group>"; };
 		DB5F8CD42149075900ACDBB4 /* CSVParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVParser.swift; sourceTree = "<group>"; };
@@ -45,6 +49,8 @@
 		DB7069862149D9850066CDCD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DB7069892149DAF20066CDCD /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		DB70698B2149E7150066CDCD /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		DBCEF536215DB38300F10768 /* ConfirmRideVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmRideVC.swift; sourceTree = "<group>"; };
+		DBCEF538215DB9A100F10768 /* LabelBeutify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelBeutify.swift; sourceTree = "<group>"; };
 		F50D83E7B688AC237EB28363 /* Pods-GlobalCrewServices.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GlobalCrewServices.release.xcconfig"; path = "Pods/Target Support Files/Pods-GlobalCrewServices/Pods-GlobalCrewServices.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,6 +116,7 @@
 			children = (
 				DB0CE37E2148EFF100487128 /* HomeVC.swift */,
 				DB5F8CCD2148F58F00ACDBB4 /* RideDetailsVC.swift */,
+				DBCEF536215DB38300F10768 /* ConfirmRideVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -119,6 +126,8 @@
 			children = (
 				DB5F8CD02148FB3500ACDBB4 /* textFieldBeutify.swift */,
 				DB7069842149C6DA0066CDCD /* DatePickerBeutify.swift */,
+				DBCEF538215DB9A100F10768 /* LabelBeutify.swift */,
+				DB0EA895215E049C00E9AAD4 /* textViewBeutify.swift */,
 			);
 			path = "UI-Items";
 			sourceTree = "<group>";
@@ -200,6 +209,7 @@
 				TargetAttributes = {
 					DB0CE3782148EFF100487128 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -287,14 +297,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB70698A2149DAF20066CDCD /* DataService.swift in Sources */,
+				DB0EA896215E049C00E9AAD4 /* textViewBeutify.swift in Sources */,
 				DB70697F214998CA0066CDCD /* PortModel.swift in Sources */,
 				DB5F8CD52149075900ACDBB4 /* CSVParser.swift in Sources */,
 				DB0CE37F2148EFF100487128 /* HomeVC.swift in Sources */,
 				DB5F8CCE2148F58F00ACDBB4 /* RideDetailsVC.swift in Sources */,
+				DBCEF539215DB9A100F10768 /* LabelBeutify.swift in Sources */,
 				DB5F8CD12148FB3500ACDBB4 /* textFieldBeutify.swift in Sources */,
 				DB70698121499D120066CDCD /* PortModelPicker.swift in Sources */,
 				DB70698C2149E7150066CDCD /* AuthService.swift in Sources */,
 				DB7069852149C6DA0066CDCD /* DatePickerBeutify.swift in Sources */,
+				DBCEF537215DB38300F10768 /* ConfirmRideVC.swift in Sources */,
 				DB0CE37D2148EFF100487128 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -449,7 +462,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = PragunSharma.GlobalCrewServices;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -468,7 +481,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = PragunSharma.GlobalCrewServices;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

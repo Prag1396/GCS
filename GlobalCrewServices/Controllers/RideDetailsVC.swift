@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseAuth
 
+
 class RideDetailsVC: UIViewController, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var background: UIImageView!
@@ -27,6 +28,9 @@ class RideDetailsVC: UIViewController, UIGestureRecognizerDelegate {
     var fromLocation: String!
     var toLocation: String!
     var pickUpDetails: String!
+    var bookingConfirmation: Int!
+    
+    let currentDate: Date = Date()
     
     //User
     private var _user: User?
@@ -58,6 +62,8 @@ class RideDetailsVC: UIViewController, UIGestureRecognizerDelegate {
         toLocationPickerView.delegate = portModelPicker
         toLocationPickerView.dataSource = portModelPicker
         toLocationPickerView.selectRow(2, inComponent: 0, animated: true)
+        
+        pickUpDetailsPickerView.minimumDate = currentDate
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(backgroundTapped))
         background.addGestureRecognizer(tap)
@@ -127,18 +133,9 @@ class RideDetailsVC: UIViewController, UIGestureRecognizerDelegate {
     
     @IBAction func confirmRideClicked(_ sender: Any) {
         
-        self.fromLocation = portModelPicker.portModelArray[fromLocationPickerView.selectedRow(inComponent: 0)].portCity
-        self.toLocation = portModelPicker.portModelArray[toLocationPickerView.selectedRow(inComponent: 0)].portCity
-        dateFormatter.setLocalizedDateFormatFromTemplate("cccc, MMM d, hh:mm aa")
-        self.pickUpDetails = dateFormatter.string(from: pickUpDetailsPickerView.date)
+        createRideModel()
         
-        uploadRideDetails()
-        
-    }
-    
-    func uploadRideDetails() {
-        
-        guard let vesselName = self.textFieldVesselName.text, vesselName != "" else {
+        guard let vname = self.textFieldVesselName.text, vname != "" else {
             //Present alert
             let alert = UIAlertController(title: "Alert", message: "Please Enter Vessel Name", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
@@ -148,24 +145,34 @@ class RideDetailsVC: UIViewController, UIGestureRecognizerDelegate {
             
             return }
         
-        guard let uid = self._uid else { return }
-        let bookingConfirmation = Int(arc4random_uniform(100000) + 1)
-        print(self.pickUpDetails)
-        print(uid)
-        let userData = ["Vessel_Name": vesselName, "From_Port": self.fromLocation, "To_Port": self.toLocation, "Date_and_Time": self.pickUpDetails, "confirmationCode": "\(bookingConfirmation)"]
-        DataService.instance.createDBUserProfile(uid: uid, userData: userData as! Dictionary<String, String>)
-        confirmationDisplay()
+        self.vesselName = vname
+        let confirmRideVC = self.storyboard?.instantiateViewController(withIdentifier: "ConfirmRideVC") as? ConfirmRideVC
+        guard let confirmrideVC = confirmRideVC else { return }
+        
+        confirmrideVC.vesselText = self.vesselName
+        confirmrideVC.fromLocText = self.fromLocation
+        confirmrideVC.toLocText = self.toLocation
+        confirmrideVC.pickUpDetailsText = self.pickUpDetails
+        confirmrideVC.confirmCodeText = String(self.bookingConfirmation)
+        self.present(confirmrideVC, animated: true, completion: nil)
+        
         
     }
     
-    func confirmationDisplay() {
-        let alert = UIAlertController(title: "Congratulations", message: "Your Ride has been confirmed. Details along with the confirmation code have been sent to your dispatch email. Please check email for further inquiries", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
-            self.dismiss(animated: true, completion: nil)
-        }))
-        self.present(alert, animated: true, completion: nil)
-    }
     
+    
+    func createRideModel() {
+        
+        self.fromLocation = portModelPicker.portModelArray[fromLocationPickerView.selectedRow(inComponent: 0)].portCity
+        self.toLocation = portModelPicker.portModelArray[toLocationPickerView.selectedRow(inComponent: 0)].portCity
+        dateFormatter.setLocalizedDateFormatFromTemplate("MM-dd-yyyy HH:mm")
+        self.pickUpDetails = dateFormatter.string(from: pickUpDetailsPickerView.date)
+        
+        //guard let uid = self._uid else { return }
+        self.bookingConfirmation = Int(arc4random_uniform(100000) + 1)
+        
+    }
+        
 }
 
 extension RideDetailsVC: UITextFieldDelegate {
@@ -176,14 +183,14 @@ extension RideDetailsVC: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         guard let _ = textField.text else {
-        textField.attributedPlaceholder = NSAttributedString(string: "VESSEL NAME", attributes: [NSAttributedStringKey.foregroundColor : UIColor.white])
+        textField.attributedPlaceholder = NSAttributedString(string: "VESSEL NAME", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
             return
         }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if (textField.text?.isEmpty)! || textField.text == "" {
-            textField.attributedPlaceholder = NSAttributedString(string: "VESSEL NAME", attributes: [NSAttributedStringKey.foregroundColor : UIColor.white])
+            textField.attributedPlaceholder = NSAttributedString(string: "VESSEL NAME", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
         }
         textField.resignFirstResponder()
         return false

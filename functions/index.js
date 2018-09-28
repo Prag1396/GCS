@@ -33,9 +33,9 @@ function createEmail(rideId) {
     var mailOptions = {
         from: "Global Crew Services <dummmy1396@gmail.com>", // sender address
         to: "praguns100@gmail.com", // list of receivers
-        subject: "New ride confirmed from mobile app", // Subject line
+        subject: rideId.Date_and_Time, // Subject line
         html: "From Location: " + rideId.From_Port + "<br>" + "To Location: " + rideId.To_Port + "<br>" + 
-        "Vessel Name: " + rideId.Vessel_Name + "<br>" + "Date and Time: " + rideId.Date_and_Time + "<br>" +
+        "Vessel Name: " + rideId.Vessel_Name + "<br>" +
         "Confirmation Code: " + rideId.confirmationCode 
     }
  
